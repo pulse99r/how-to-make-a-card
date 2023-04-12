@@ -1,0 +1,73 @@
+body{
+  background-color: aquamarine;
+  font-family: Arial, Helvetica, sans-serif;
+  width: 80%;
+}
+main{
+  min-width: 100%;
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+}
+.header{
+  align-items:center;
+  border: 5px solid rgb(95, 92, 92);
+  border-radius: 8px;
+  margin: 0 5px 0 5px;
+  padding: 0 5px 0 5px;
+  width:40%;
+}
+.card-container{
+  align-items: center;
+  border: 5px solid rgb(95, 92, 92);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  height: 760px;
+  
+  overflow-x: visible;
+  overflow-y: scroll;
+  padding: 5px;
+    /* flex-direction: column; */
+}
+.card{
+  align-items: center;
+  background-color: rgb(245, 243, 235);
+  border: 5px solid gray;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  margin: 3px;
+  padding: 10px 5px 10px 5px;
+  width: 180px;
+}
+.card-img{
+  border: 5px solid green;
+  border-radius: 8px;
+  width: 90%;
+}
+.card-info{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  list-style: none;
+  margin-left: -40px;
+  padding-left: 0 0 10px 0;
+}
+.card-header{
+  font-size: 22px;
+}
+.description{
+  font-size: 16px;
+  color:gray;
+}
+#view-profile{
+  background-color: gray;
+  border: 2px solid gray;
+  border-radius: 5px;
+  color: aliceblue;
+  padding: 3px 6px 3px 6px;
+}
+#view-profile:hover{
+  cursor: pointer;
+}
