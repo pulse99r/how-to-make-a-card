@@ -2,6 +2,7 @@
 Automating the card-making process
 * 1. Get the HTML elements
 */
+let blankImg = "blank.png";
 let cardContainer = document.querySelector('.card-container')
 let headerArea = document.querySelector('.header')
 let cardCounter;
@@ -13,10 +14,12 @@ let createNewCard = (img,name,description)=> {
   
   let cardInfo = createNewElement('ul','class','card-info')
   let cardHeader = createNewElement('li','class','card-header');
+  cardHeader.innerText = name;
   cardInfo.append(cardHeader)
   
   let cardDescription = createNewElement('li','class','card-description');
-  cardInfo.append(cardDescription)
+  cardDescription.innerText = description;
+  cardInfo.append(cardDescription);
   
   let viewProfile = createNewElement('input','id','view-profile')
   card.append(cardInfo)
@@ -56,19 +59,44 @@ let createNewElement = (element,attribute,value)=> {
   return cardElement;
 }
 
-
-
-let addNewProfile = () => {
+let getNewCardInput = () => {
+  let newNameInputForm = createNewElement('form','id','add-profile-form');
+  let inputName = createNewElement('input','id','input-name');
+  inputName.placeholder='Your name here'
+  let inputOrg = createNewElement('input','id','input-org');
+  inputOrg.placeholder = 'Title, Org., or Description'
   let addProfile = createNewElement('input','id','Add-Profile')
-  headerArea.append(addProfile)
+  newNameInputForm.append(inputName);
+  newNameInputForm.append(inputOrg);
+  headerArea.append(newNameInputForm)
+  headerArea.append(addProfile);
 }
-addNewProfile()
+
+getNewCardInput()
+// let addNewProfile = () => {
+ 
+// }
+/*
+<form action="/action_page.php">
+  <fieldset>
+    <legend>Personalia:</legend>
+    <label for="fname">First name:</label><br>
+    <input type="text" id="fname" name="fname" value="John"><br>
+    <label for="lname">Last name:</label><br>
+    <input type="text" id="lname" name="lname" value="Doe"><br><br>
+    <input type="submit" value="Submit">
+  </fieldset>
+</form>
+*/
+
 
 const addProfileBtn = document.querySelector('#Add-Profile')
 
 addProfileBtn.addEventListener('click',(event)=>{
   event.preventDefault();
-  createNewCard()
+  let inputName = document.querySelector('#input-name')
+  let inputOrg = document.querySelector('#input-org')
+  createNewCard(blankImg,inputName.value,inputOrg.value)
   let cards = document.querySelectorAll('.card')
   let numOfCards = 0
   cards.forEach(card => {
@@ -77,3 +105,4 @@ addProfileBtn.addEventListener('click',(event)=>{
   });
   cardCounter.innerText = numOfCards
 })
+

@@ -73,6 +73,14 @@ main{
   color: aliceblue;
   padding: 3px 6px 3px 6px;
 }
+#add-profile-form{
+  display: flex;
+  flex-direction: column;
+  margin: 4px;
+}
+#input-name, #input-org{
+  margin: 4px;
+}
 #view-profile:hover {
   cursor: pointer;
 }
