@@ -2,6 +2,8 @@ body{
   background-color: aquamarine;
   font-family: Arial, Helvetica, sans-serif;
   width: 80%;
+  margin: auto;
+  padding:auto;
 }
 main{
   min-width: 100%;
@@ -14,17 +16,18 @@ main{
   border: 5px solid rgb(95, 92, 92);
   border-radius: 8px;
   margin: 0 5px 0 5px;
-  padding: 0 5px 0 5px;
+  padding: 0 15px 0 15px;
   width:40%;
 }
+
 .card-container{
-  align-items: center;
+  justify-content: center;
+  background-color:rgb(212, 203, 193); 
   border: 5px solid rgb(95, 92, 92);
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
   height: 760px;
-  
   overflow-x: visible;
   overflow-y: scroll;
   padding: 5px;
@@ -57,17 +60,20 @@ main{
 .card-header{
   font-size: 22px;
 }
-.description{
+.card-description{
   font-size: 16px;
   color:gray;
 }
-#view-profile{
+#view-profile #Add-Profile{
   background-color: gray;
   border: 2px solid gray;
   border-radius: 5px;
   color: aliceblue;
   padding: 3px 6px 3px 6px;
 }
-#view-profile:hover{
+#view-profile:hover {
+  cursor: pointer;
+}
+#Add-Profile:hover{
   cursor: pointer;
 }
