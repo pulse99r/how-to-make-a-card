@@ -6,7 +6,7 @@ body{
   padding:auto;
 }
 main{
-  min-width: 100%;
+  min-width: 90%;
   text-align: center;
   display: flex;
   flex-direction: row;
@@ -17,7 +17,8 @@ main{
   border-radius: 8px;
   margin: 0 5px 0 5px;
   padding: 0 15px 0 15px;
-  width:40%;
+  min-width:30%;
+  max-width: 35%;
 }
 
 .card-container{
@@ -27,7 +28,7 @@ main{
   border-radius: 8px;
   display: flex;
   flex-wrap: wrap;
-  height: 760px;
+  height: 700px;
   overflow-x: visible;
   overflow-y: scroll;
   padding: 5px;
@@ -43,6 +44,7 @@ main{
   margin: 3px;
   padding: 10px 5px 10px 5px;
   width: 180px;
+  height: 334px;
 }
 .card-img{
   border: 5px solid green;
@@ -77,3 +79,31 @@ main{
 #Add-Profile:hover{
   cursor: pointer;
 }
+.footer{
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+span{
+  font-weight: bold;
+}
+.link{
+  background-color: gray;
+  border: 1px solid black;
+  color: cornsilk;
+  margin: 3px;
+  padding: 0 7px 0 7px;
+  /* text-decoration: none; */
+  text-decoration: none;
+}
+
+/* link:active{
+  color: cornsilk;
+}
+link:hover {
+  color: cornsilk;
+}
+link:visited{
+  color: cornsilk;
+} */

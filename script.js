@@ -4,7 +4,7 @@ Automating the card-making process
 */
 let cardContainer = document.querySelector('.card-container')
 let headerArea = document.querySelector('.header')
-
+let cardCounter;
 
 let createNewCard = (img,name,description)=> {
   let card = createNewElement('div', 'class', 'card');
@@ -23,7 +23,13 @@ let createNewCard = (img,name,description)=> {
   card.append(viewProfile)
   
   cardContainer.append(card)
-  console.log(card)
+  if(cardCounter===undefined){
+    let cardCounterLabel = createNewElement('p','id','card-counter-label')
+    cardCounter = createNewElement('span','id','card-counter')
+    cardCounterLabel.innerText = `Number of Cards: `
+    cardCounterLabel.append(cardCounter)
+    headerArea.append(cardCounterLabel)
+  }
 }
 
 let createNewElement = (element,attribute,value)=> {
@@ -45,8 +51,7 @@ let createNewElement = (element,attribute,value)=> {
   }
   if(element==='input' && value ==='Add-Profile'){
     cardElement.setAttribute('type','button')
-    cardElement.setAttribute('value','Add New Profile')
-    console.log('addProfile Element',cardElement)
+    cardElement.setAttribute('value','Add New Profile Card')
   }
   return cardElement;
 }
@@ -61,8 +66,14 @@ addNewProfile()
 
 const addProfileBtn = document.querySelector('#Add-Profile')
 
-
 addProfileBtn.addEventListener('click',(event)=>{
   event.preventDefault();
   createNewCard()
+  let cards = document.querySelectorAll('.card')
+  let numOfCards = 0
+  cards.forEach(card => {
+    numOfCards += 1
+    
+  });
+  cardCounter.innerText = numOfCards
 })
