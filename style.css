@@ -119,17 +119,25 @@ span{
 }
 
 a:link {
+  color: cornsilk;
+  font-weight: 700;
   text-decoration: none;
 }
 
 a:visited {
+  color: cornsilk;
+  font-weight: 700;
   text-decoration: none;
 }
 
 a:hover {
+  color: cornsilk;
+  font-weight: 700;
   text-decoration: none;
 }
 
 a:active {
+  color: cornsilk;
+  font-weight: 700;
   text-decoration: none;
 }
