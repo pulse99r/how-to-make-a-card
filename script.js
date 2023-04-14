@@ -35,6 +35,13 @@ let createNewCard = (img,name,description)=> {
   }
 }
 
+/* Creates new elements 
+* takes three arguments:
+* 1. the element: string eg 'div', 'li', 'form', etc.
+* 2. an attribute: string; eg 'class', 'id', etc.
+* 3. the value for the attribute: string; the name of the class, the name of the id, etc.
+*/
+
 let createNewElement = (element,attribute,value)=> {
   let cardElement = document.createElement(element);
   cardElement.setAttribute(attribute,value);
@@ -59,6 +66,10 @@ let createNewElement = (element,attribute,value)=> {
   return cardElement;
 }
 
+/* This function creates the input elements used to get the data to be used on the cards.
+1. an input for name
+2. an input for title, organization or description
+*/
 let getNewCardInput = () => {
   let newNameInputForm = createNewElement('form','id','add-profile-form');
   let inputName = createNewElement('input','id','input-name');
@@ -73,30 +84,22 @@ let getNewCardInput = () => {
 }
 
 getNewCardInput()
-// let addNewProfile = () => {
- 
-// }
-/*
-<form action="/action_page.php">
-  <fieldset>
-    <legend>Personalia:</legend>
-    <label for="fname">First name:</label><br>
-    <input type="text" id="fname" name="fname" value="John"><br>
-    <label for="lname">Last name:</label><br>
-    <input type="text" id="lname" name="lname" value="Doe"><br><br>
-    <input type="submit" value="Submit">
-  </fieldset>
-</form>
+
+/* get the 'add new profile card' button from the DOM.
+This can only be done after the button has been added
+to the DOM in the getNewCardInput function,
 */
-
-
 const addProfileBtn = document.querySelector('#Add-Profile')
 
+/* Adds an event listener to the 'add new profile card' button.
+*/
 addProfileBtn.addEventListener('click',(event)=>{
   event.preventDefault();
   let inputName = document.querySelector('#input-name')
   let inputOrg = document.querySelector('#input-org')
   createNewCard(blankImg,inputName.value,inputOrg.value)
+  inputName.value = "";
+  inputOrg.value = "";
   let cards = document.querySelectorAll('.card')
   let numOfCards = 0
   cards.forEach(card => {
