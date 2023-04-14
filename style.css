@@ -20,7 +20,12 @@ main{
   min-width:30%;
   max-width: 35%;
 }
-
+h1{
+  border: 5px solid rgb(95, 92, 92);
+  border-radius: 8px;
+  margin: 20px 5px 20px 5px;
+  padding: 0 15px 0 15px;
+}
 .card-container{
   justify-content: center;
   background-color:rgb(212, 203, 193); 
@@ -74,12 +79,18 @@ main{
   padding: 3px 6px 3px 6px;
 }
 #add-profile-form{
+  align-items: center;
+  background-color: gray;
+  border-radius: 8px;
   display: flex;
   flex-direction: column;
   margin: 4px;
 }
 #input-name, #input-org{
+  border-radius: 5px; 
   margin: 4px;
+  padding: 3px;
+  width: 260px;
 }
 #view-profile:hover {
   cursor: pointer;
@@ -99,19 +110,26 @@ span{
 .link{
   background-color: gray;
   border: 1px solid black;
+  border-radius: 5px;
   color: cornsilk;
   margin: 3px;
-  padding: 0 7px 0 7px;
+  padding: 0 10px 0 10px;
   /* text-decoration: none; */
   text-decoration: none;
 }
 
-/* link:active{
-  color: cornsilk;
+a:link {
+  text-decoration: none;
 }
-link:hover {
-  color: cornsilk;
+
+a:visited {
+  text-decoration: none;
 }
-link:visited{
-  color: cornsilk;
-} */
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
